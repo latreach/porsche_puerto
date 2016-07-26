@@ -1,0 +1,28 @@
+{
+  "name": "porsche_puerto",
+  "version": "1.0.0",
+  "description": "Presentació Porsche Puerto Vallarta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latreach/porsche_puerto.git"
+  },
+  "keywords": [
+    "CRM",
+    "Marketing",
+    "Digital"
+  ],
+  "author": "Paul Márquez <paul@latreach.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/latreach/porsche_puerto/issues"
+  },
+  "homepage": "https://github.com/latreach/porsche_puerto#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
