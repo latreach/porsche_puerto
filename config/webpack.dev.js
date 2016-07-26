@@ -29,7 +29,6 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   plugins: [
-
     new DefinePlugin({
       'ENV': JSON.stringify(METADATA.ENV),
       'process.env': {
@@ -39,25 +38,13 @@ module.exports = webpackMerge(commonConfig, {
     }),
   ],
 
-  /**
-   * Static analysis linter for TypeScript advanced options configuration
-   * Description: An extensible linter for the TypeScript language.
-   * See: https://github.com/wbuchwalter/tslint-loader
-   */
-  tslint: {
-    emitErrors: false,
-    failOnHint: false,
-    resourcePath: 'src'
+  eslint: {
+    emitError: true,
+    emitWarning: true,
+    failOnWarning: false,
+    failOnError: true
   },
 
-  /**
-   * Webpack Development Server configuration
-   * Description: The webpack-dev-server is a little node.js Express server.
-   * The server emits information about the compilation state to the client,
-   * which reacts to those events.
-   *
-   * See: https://webpack.github.io/docs/webpack-dev-server.html
-   */
   devServer: {
     port: METADATA.port,
     host: METADATA.host,
@@ -69,17 +56,6 @@ module.exports = webpackMerge(commonConfig, {
     outputPath: helpers.root('dist')
   },
 
-  eslint: {
-    emitError: true,
-    emitWarning: true,
-    failOnWarning: false,
-    failOnError: true
-  }
-  /*
-   * Include polyfills or mocks for various node stuff
-   * Description: Node configuration
-   * See: https://webpack.github.io/docs/configuration.html#node
-   */
   node: {
     global: 'window',
     crypto: 'empty',
@@ -90,4 +66,3 @@ module.exports = webpackMerge(commonConfig, {
   }
 
 });
-
