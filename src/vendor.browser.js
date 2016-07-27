@@ -1,7 +1,14 @@
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
-
 import 'jquery';
-import 'loadash';
+import 'bootstrap-loader';
 import 'd3';
 import 'font-awesome-sass-loader';
+import 'lodash';
+
+if (ENV === "production") {
+  // Production
+
+} else {
+  // Development
+  require("./index.html");
+  Error.stackTraceLimit = Infinity;
+}
