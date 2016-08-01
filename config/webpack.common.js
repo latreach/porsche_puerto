@@ -63,7 +63,7 @@ module.exports = {
         loader: 'imports?jQuery=jquery'
       },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.csv$/, loader: 'dsv-loader} 
+      { test: /\.csv$/, loader: 'dsv-loader'}
 
       // { test: /\.css$/, loader: 'raw-loader' },
       // {
