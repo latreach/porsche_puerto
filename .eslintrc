@@ -1,11 +1,15 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "env": {
     "browser": true,
   },
   "globals": {
-    "jQuery": false,
-    "$": false,
-    "_": false
+    "jQuery": true,
+    "$": true,
+    "_": true
   },
   "rules": {
     "strict": [2, "global"],
