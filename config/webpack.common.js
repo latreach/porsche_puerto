@@ -23,7 +23,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [ '', '.html', '.js', '.css', '.scss' ],
+    extensions: [ '', '.html', '.js', '.css', '.scss', 'json' ],
     root: helpers.root('src'),
     modulesDirectories: [ 'node_modules' ],
   },
@@ -61,8 +61,8 @@ module.exports = {
       {
         test: /bootstrap\/dist\/js\/umd\//,
         loader: 'imports?jQuery=jquery'
-      }
-      // { test: /\.json$/, loader: 'json-loader' },
+      },
+      { test: /\.json$/, loader: 'json-loader' }
       // { test: /\.css$/, loader: 'raw-loader' },
       // {
       //   test: /initial\.scss$/,

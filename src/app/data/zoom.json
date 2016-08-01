@@ -1,0 +1,40 @@
+{
+    "name":"zoom",
+    "children":[
+
+    {
+       "name":"Latreach",
+        "children":[
+            {
+                "name":"Data Science",
+                "children":[
+                {"name":"Text mining", "size": 3800},
+                {"name":"Data mining", "size":3900},
+                {"name":"Data wrangling", "size":2500},
+                {"name":"Data visualization", "size": 3200}
+                ]
+            }
+        ] 
+        "children":[
+           {
+                "name":"Desarrollo",
+                "children":[
+                 {"name": "Web applications", "size":3200},
+                 {"name": "Web development", "size":3450}
+                  ]
+            }
+        ]
+        }
+        "children":[
+          {
+              "name":"Diseño",
+              "children":[
+                {"name":"Carteles", "size":2300},
+                {"name":"Volantes", "size":3200},
+                {"name":"Branding", "size":2500}
+              ]          
+            
+          }
+        ]
+      }
+
