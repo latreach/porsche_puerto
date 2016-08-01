@@ -1,2 +1,1 @@
-export "./zoom.json";
-export "./latred.json";
+export  * from "./latred.json";
