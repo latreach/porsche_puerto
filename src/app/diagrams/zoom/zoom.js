@@ -27,15 +27,14 @@ d3.csv("latreach.csv", function(error, data) {
   var root = stratify(data)
       .sum(function(d) { return d.value; })
       .sort(function(a, b) { return b.value - a.value; });
-	
+
   pack(root);
-	console.log(pack(root))
-	
-	
+
+
   var focus = root,
       nodes = root.descendants(),
       view;
-      
+
   var node = svg.select("g")
     .selectAll("g")
     .data(root.descendants())
@@ -69,9 +68,9 @@ d3.csv("latreach.csv", function(error, data) {
 
   node.append("title")
       .text(function(d) { return d.id + "\n" + format(d.value); });
-      
-      
-      
+
+
+
   d3.select("svg")
       .style("background", color(-1))
       .on("click", function() { zoom(node); });
@@ -100,7 +99,7 @@ d3.csv("latreach.csv", function(error, data) {
     nodes.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
 	nodes.attr("r", function(d) { return d.r * k; });
   }
-      
+
 });
 
 function hovered(hover) {

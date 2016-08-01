@@ -62,7 +62,9 @@ module.exports = {
         test: /bootstrap\/dist\/js\/umd\//,
         loader: 'imports?jQuery=jquery'
       },
-      { test: /\.json$/, loader: 'json-loader' }
+      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.csv$/, loader: 'dsv-loader'}
+
       // { test: /\.css$/, loader: 'raw-loader' },
       // {
       //   test: /initial\.scss$/,
