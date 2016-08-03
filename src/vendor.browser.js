@@ -1,7 +1,8 @@
 import 'jquery';
 import 'bootstrap-loader';
+import 'font-awesome-loader';
+
 import 'd3';
-import 'font-awesome-sass-loader';
 import 'lodash';
 
 if (ENV === "production") {
