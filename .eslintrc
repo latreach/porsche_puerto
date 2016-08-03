@@ -23,7 +23,12 @@
     "no-undef-init": 1,
     "no-undef": 2,
     "no-undefined": 2,
-    "no-unused-vars": [1, {"vars": "all", "args": "all"}],
+    "no-unused-vars": [1,
+      {
+        "vars": "all",
+        "args": "after-used",
+      }
+    ],
     "no-use-before-define": 1,
 
     "comma-dangle": [2, "never"],

@@ -2,10 +2,10 @@
  * Groups for chord diagram
  */
 import {svg} from './svg';
-import {Chord} from './chord';
-import {NameProvider} from './constants';
+import {chord} from './chord';
+import {NameProvider, matrix} from './constants';
 export const g = svg
   .selectAll('g.group')
-  .data(Chord.groups)
+  .datum(chord(matrix))
   .enter().append('svg:g')
   .attr('class', (d) => 'group' + NameProvider[d.index]);

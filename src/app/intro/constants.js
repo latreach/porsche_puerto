@@ -50,3 +50,7 @@ export const height = 650 - margin.top - margin.bottom;
 export const width  = 700 - margin.left - margin.right;
 export const innerRadius = Math.min(width, height) * 0.39;
 export const outerRadius = innerRadius * 1.04;
+export const progressColor = ['#d1d1d1', '#949494'];
+export const progressClass = ['prgsBehind', 'pgrsFront'];
+export const progressWidth = 0.4 * 650;
+export const progressHeight = 3;

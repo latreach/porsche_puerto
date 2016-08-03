@@ -1,9 +1,8 @@
 /**
  * Initialize chord diagram
  */
-import {chord, descending} from 'd3';
-import {matrix} from './constants';
-export const Chord = chord(matrix)
+import {chord as _chord, descending} from 'd3';
+export const chord = _chord()
   .padAngle(0.04)
-  .sortSubgroups(descending)
-  .sortChords(descending);
+  .sortChords(descending)
+  .sortSubgroups(descending);
