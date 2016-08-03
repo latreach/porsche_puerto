@@ -1,1 +1,1 @@
-import './intro/steps';
+import './intro';

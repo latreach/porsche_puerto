@@ -1,5 +1,5 @@
-import {innerRadius, NameProvider} from '../constants';
 import {g} from '../g';
+import {innerRadius, NameProvider} from '../constants';
 
 g.append('svg:g')
   .each((d) => {

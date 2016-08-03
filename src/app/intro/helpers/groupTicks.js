@@ -5,6 +5,7 @@
  * @returns {Array}
  */
 import {range} from 'd3';
+
 export default function (d) {
   const k = (d.endAngle - d.startAngle) / d.value;
 

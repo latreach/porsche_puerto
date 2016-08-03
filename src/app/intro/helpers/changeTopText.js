@@ -11,6 +11,7 @@ import * as d3 from 'd3';
 import {default as wrap} from './wrap';
 import {default as endAll} from './endAll';
 import {middleTopText} from '../middleTopText';
+
 export default function changeTopText (
   newText,
   loc,
@@ -27,7 +28,7 @@ export default function changeTopText (
 
     // New text appear
     .call(endAll, () => {
-      selector
+      middleTopText
         .text(newText)
         .attr('y', -24 * loc + 'px')
         .attr('x', xloc + 'px')

@@ -5,6 +5,7 @@ import * as d3 from 'd3';
 import {
   stopClicker, runProgressBar, changeTopText, changeBottomText
 } from '../helpers';
+
 export function draw1 () {
   // Disable click event on clicker button
   stopClicker();

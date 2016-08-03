@@ -4,6 +4,7 @@
 import {svg} from './svg';
 import {chord} from './chord';
 import {NameProvider, matrix} from './constants';
+
 export const g = svg
   .selectAll('g.group')
   .data(chord(matrix).groups)
