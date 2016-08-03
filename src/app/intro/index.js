@@ -1,1 +1,2 @@
-export {svg} from './initialize';
+export {svg} from './svg';
+export {chord} from './chord';
