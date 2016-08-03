@@ -9,14 +9,15 @@
  */
 import {default as endAll} from './endAll';
 import {default as wrap} from './wrap';
-export default function (selector, newText, loc, delayDisappear, delayAppear) {
-  selector
+import {middleBottomText} from '../middleBottomText';
+export default function (newText, loc, delayDisappear, delayAppear) {
+  middleBottomText
     // Current text disappear
     .transition().delay(700 * delayDisappear).duration(700)
     .attr('opacity', 0)
     // New text appear
     .call(endAll, () => {
-      selector.text(newText)
+      middleBottomText.text(newText)
         .attr('y', 24 * loc + 'px')
         .call(wrap, 350);
     })

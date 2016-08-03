@@ -7,11 +7,11 @@
  * @param xloc
  * @param w
  */
+import * as d3 from 'd3';
 import {default as wrap} from './wrap';
 import {default as endAll} from './endAll';
-import d3 from 'd3';
+import {middleTopText} from '../middleTopText';
 export default function changeTopText (
-  selector,
   newText,
   loc,
   delayDisappear,
@@ -20,7 +20,7 @@ export default function changeTopText (
   xloc = 0,
   w = 350
 ) {
-  selector
+  middleTopText
     // Current text disappear
     .transition().delay(700 * delayDisappear).duration(700)
     .attr('opacity', 0)

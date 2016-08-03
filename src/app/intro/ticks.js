@@ -3,7 +3,7 @@
  */
 import {svg} from './svg';
 import {outerRadius, NameProvider} from './constants';
-import {groupTicks} from '../helpers';
+import {groupTicks} from './helpers';
 export const ticks = svg
   .selectAll('g.group')
   .attr('class', (d) => 'ticks' + NameProvider[d.index])

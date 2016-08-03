@@ -3,8 +3,9 @@
  * @param {int} time
  * @return void
  */
-import d3 from 'd3';
+import * as d3 from 'd3';
 import {default as endAll} from './endAll';
+import {progressWidth} from '../steps/constants';
 export default function (time) {
   // Make the progress div visible
   d3.selectAll('#progress')
@@ -14,7 +15,7 @@ export default function (time) {
   // After this is done, hide div again
   d3.selectAll('.prgsFront')
     .transition().duration(time).ease('linear')
-    .attr('width', prgsWidth) // TODO: pgrsWidth?? find variable
+    .attr('width', progressWidth)
     .call(endAll, () => {
       d3.selectAll('#progress')
         .style('visibility', 'hidden');

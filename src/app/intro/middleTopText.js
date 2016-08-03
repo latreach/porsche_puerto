@@ -1,8 +1,8 @@
 /**
  * Middle Top Text
  */
-import {textCenter} from 'textCenter';
-import {wrap} from '../helpers';
+import {textCenter} from './textCenter';
+import {wrap} from './helpers';
 export const middleTopText = textCenter.append('text')
   .attr('class', 'explanation')
   .attr('text-anchor', 'middle')
