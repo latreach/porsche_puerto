@@ -5,11 +5,13 @@
   },
   "env": {
     "browser": true,
+    "node": true
   },
   "globals": {
     "jQuery": true,
     "$": true,
-    "_": true
+    "_": true,
+    "ENV": true
   },
   "rules": {
     "strict": [2, "global"],

@@ -31,6 +31,7 @@ export function draw2 () {
           return arc(d);
         };
       }
+      return function () {};
     });
 
   // Show the tick around the Apple arc
