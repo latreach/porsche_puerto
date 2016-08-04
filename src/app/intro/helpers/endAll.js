@@ -10,8 +10,10 @@ export default function (transition, callback) {
   let n = 0;
 
   transition
-    .each(() => ++n)
-    .each('end', function () {
+    .each(function () {
+      ++n;
+    })
+    .on('end', function () {
       if (!--n) {
         callback.apply(this, arguments);
       }

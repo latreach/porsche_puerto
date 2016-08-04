@@ -13,6 +13,6 @@ export const middleBottomText = textCenter.append('text')
   .attr('opacity', 1)
   .text(`
     The respondents gave us information about the brand of their current main
-    phone, and the brand of their previous main phone.
+    phone, and the brand of their previous main phone
   `)
   .call(wrap, 350);

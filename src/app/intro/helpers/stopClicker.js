@@ -2,6 +2,7 @@
  * Stop clicker from working
  */
 import * as d3 from 'd3';
+
 export default function () {
   d3.select('#clicker')
     .style('pointer-events', 'none')

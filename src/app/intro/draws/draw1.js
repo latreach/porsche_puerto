@@ -28,5 +28,5 @@ export function draw1 () {
   d3.selectAll('.arc')
     .transition().delay(9 * 700).duration(2100)
     .style('opacity', 0)
-    .each('end', () => d3.selectAll('.arc').remove());
+    .on('end', () => d3.selectAll('.arc').remove());
 }
