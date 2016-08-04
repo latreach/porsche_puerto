@@ -11,7 +11,7 @@ const HtmlElementsPlugin = require('./html-elements-plugin');
 
 const METADATA = {
   title: 'Presentación Porsche Puerto Vallarta',
-  baseUrl: '/',
+  baseUrl: '/'
 };
 
 module.exports = {
@@ -23,27 +23,27 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [ '', '.html', '.js', '.css', '.scss', 'json' ],
+    extensions: ['', '.html', '.js', '.css', '.scss', 'json'],
     root: helpers.root('src'),
-    modulesDirectories: [ 'node_modules' ],
+    modulesDirectories: ['node_modules']
   },
 
   module: {
 
     preLoaders: [
-      { test: /\·js$/, loader: 'eslint-loader', exclude: /node_modules/ },
-      { test: /\.js$/, loader: 'source-map-loader' }
+      {test: /\·js$/, loader: 'eslint-loader', exclude: /node_modules/},
+      {test: /\.js$/, loader: 'source-map-loader'}
     ],
 
     loaders: [
-       {
-         test: /\.html$/,
-         loader: 'raw',
-         // exclude: [ helpers.root('src/index.html') ]
-       },
+      {
+        test: /\.html$/,
+        loader: 'raw'
+        // exclude: [ helpers.root('src/index.html') ]
+      },
       {
         test: /\.scss$/,
-        loaders: [ 'raw', 'sass' ]
+        loaders: ['raw', 'sass']
       },
       {
         test: /\.js$/,
@@ -62,27 +62,26 @@ module.exports = {
         test: /bootstrap\/dist\/js\/umd\//,
         loader: 'imports?jQuery=jquery'
       },
-      { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.csv$/, loader: 'dsv-loader'}
-
+      {test: /\.json$/, loader: 'json-loader'},
+      {test: /\.csv$/, loader: 'dsv-loader'}
       // { test: /\.css$/, loader: 'raw-loader' },
       // {
       //   test: /initial\.scss$/,
       //   loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
       // },
     ]
-},
+  },
 
   plugins: [
     // new ExtractTextPlugin('initial.css', { allChunks: true }),
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new CopyWebpackPlugin([{ from: 'src/assets', to: 'assets' }]),
+    new CopyWebpackPlugin([{from: 'src/assets', to: 'assets'}]),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       chunksSortMode: 'dependency',
       cache: false
     }),
-    new HtmlElementsPlugin({ headTags: require('./head-config.common') }),
+    new HtmlElementsPlugin({headTags: require('./head-config.common')}),
     /*
      * new webpack.optimize.CommonsChunkPlugin({
      *   name: ['polyfills', 'vendor'].reverse()
@@ -93,7 +92,8 @@ module.exports = {
       $: 'jquery',
       jquery: 'jquery',
       'Tether': 'tether',
-      'window.Tether': 'tether'
+      'window.Tether': 'tether',
+      d3: 'd3'
     })
   ],
 

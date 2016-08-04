@@ -1,1 +1,1 @@
-export * from './data'
+import './intro';
