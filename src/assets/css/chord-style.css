@@ -58,8 +58,8 @@ body {
 	position: relative;
 	width: 640px;
 	text-align: center;
-	margin-top: 30px;	
-	overflow: hidden;		  
+	margin-top: 30px;
+	overflow: hidden;
 }
 
 #buttonWrapperInner{
@@ -72,21 +72,21 @@ body {
 
 #skip{
 	width: 90px;
-	cursor: pointer;	
-	float: left;	
+	cursor: pointer;
+	float: left
 	text-align: left;
 }
 
 #reset{
 	width: 110px;
-	cursor: pointer;	
-	float: left;			  
+	cursor: pointer;
+	float: left;
 }
 
 #link{
 	width: 100px;
-	cursor: pointer;	
-	float: left;	
+	cursor: pointer;
+	float: left;
 	text-align: right;
 }
 
