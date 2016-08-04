@@ -11,7 +11,6 @@ import {svg} from '../svg';
 import {chords} from '../chords';
 
 export function finalChord () {
-  console.log('skip');
   // Remove button
   d3.select('#clicker').style('visibility', 'hidden');
   d3.select('#skip').style('visibility', 'hidden');
