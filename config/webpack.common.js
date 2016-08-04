@@ -73,14 +73,14 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('initial.css', { allChunks: true }),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new CopyWebpackPlugin([{from: 'src/assets', to: 'assets'}]),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      chunksSortMode: 'dependency',
+      chunksSortMode: 'auto',
       cache: false
     }),
+    new ExtractTextPlugin('initial.css', {allChunks: true}),
     new HtmlElementsPlugin({headTags: require('./head-config.common')}),
     /*
      * new webpack.optimize.CommonsChunkPlugin({
@@ -104,5 +104,4 @@ module.exports = {
     clearImmediate: false,
     setImmediate: false
   }
-
 };
