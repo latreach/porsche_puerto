@@ -6,3 +6,5 @@ import './drawProgressBar';
 import './reload';
 import './goToFinal';
 import './clicker';
+export {step} from './clicker';
+export {buttonTexts} from './constants';

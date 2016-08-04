@@ -5,7 +5,7 @@
  */
 import * as d3 from 'd3';
 import {default as endAll} from './endAll';
-import {progressWidth} from '../steps/constants';
+import {progressWidth} from '../constants';
 
 export default function (time) {
   // Make the progress div visible

@@ -2,14 +2,19 @@
  * Clicker handler for steps visualization
  */
 import * as d3 from 'd3';
-import {draw1} from '../draws';
+import {draw1, draw2} from '../draws';
 
-let step = 1;
+export let step = 1;
+
 d3.select('#clicker').on('click', () => {
   switch (step) {
-    default: {
+    default:
+    case 1:
       draw1();
-    }
+      break;
+    case 2:
+      draw2();
+      break;
   }
-  ++step
+  ++step;
 });
