@@ -11,7 +11,7 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 const METADATA = webpackMerge(commonConfig.metadata, {
   host: 'localhost',
   port: 3000,
-  ENV: ENV,
+  ENV: ENV
 });
 
 module.exports = webpackMerge(commonConfig, {
@@ -25,7 +25,7 @@ module.exports = webpackMerge(commonConfig, {
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js',
     library: 'ac_[name]',
-    libraryTarget: 'var',
+    libraryTarget: 'var'
   },
 
   plugins: [
@@ -33,18 +33,16 @@ module.exports = webpackMerge(commonConfig, {
       'ENV': JSON.stringify(METADATA.ENV),
       'process.env': {
         'ENV': JSON.stringify(METADATA.ENV),
-        'NODE_ENV': JSON.stringify(METADATA.ENV),
+        'NODE_ENV': JSON.stringify(METADATA.ENV)
       }
-    }),
+    })
   ],
-
   eslint: {
     emitError: true,
     emitWarning: true,
     failOnWarning: false,
     failOnError: true
   },
-
   devServer: {
     port: METADATA.port,
     host: METADATA.host,
@@ -64,5 +62,4 @@ module.exports = webpackMerge(commonConfig, {
     clearImmediate: false,
     setImmediate: false
   }
-
 });

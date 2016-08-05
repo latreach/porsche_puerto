@@ -2,9 +2,7 @@ body {
 	overflow: hidden;
 	margin: 0;
 	font-size: 14px;
-	font-family: 'Raleway', sans-serif;
-	/*font-family: Oswald;*/
-	/*font-family: "Helvetica Neue", Helvetica;*/
+	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
 }
 
@@ -15,26 +13,23 @@ body {
 	margin: 0 auto;
 	position: relative;
 	width: 640px;
-	/*padding-top: 5px;*/
 	visibility: auto;
 }
 
 #clicker {
 	z-index: 1;
 	display: block;
-	font-family: Oswald;
+	font-family: 'Poiret One';
 	font-size: 36px;
 	font-weight: 300;
 	color: #363636;
 	position: relative;
-	/*width: 80px;*/
 	text-align: center;
 	width: 30%;
 	margin: 0 auto;
 	border: 1px solid;
 	border-color: #363636;
-	cursor: pointer;
-}
+	cursor: pointer; }
 
 #progress {
 	z-index: 1;
@@ -110,7 +105,7 @@ text {
 }
 
 path.chord {
-	fill-opacity: .80;
+	fill-opacity: 0.80;
 }
 
 a {
@@ -125,4 +120,27 @@ a {
 .nodes circle {
 	stroke: #fff;
 	stroke-width: 1.5px;
+}
+
+.navbar-brand {
+  color: red !important;
+}
+
+@media(max-width:34em) {
+	.navbar-brand {
+		float: none;
+		margin: 0;
+  }
+
+	.navbar .navbar-nav > .nav-item {
+  	float: none;
+    margin-left: 0.1rem;
+  }
+
+  .navbar .navbar-nav {
+ 		float: none !important;
+  }
+  .navbar .collapse.in, .navbar .collapsing {
+  	clear: both;
+	}
 }
