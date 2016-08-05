@@ -1,94 +1,116 @@
+$position:relative;
+$margin: 0 auto;
+$display: block;
+
+
 body {
 	overflow: hidden;
 	margin: 0;
 	font-size: 14px;
-	font-family: 'Raleway', sans-serif;
-	/*font-family: Oswald;*/
-	/*font-family: "Helvetica Neue", Helvetica;*/
 	text-align: center;
+	background:#ffffff;
 }
 
-#clickerWrapper {
-	top: 0;
-	z-index: 1;
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	width: 640px;
-	/*padding-top: 5px;*/
-	visibility: auto;
+
+#clickerWrapper{
+	top:0;
+	z-index:1;
+	display:$display;
+	margin: $margin;
+	position:$position;
+	width:640px;
+	visibility:auto;
+
+	#clicker{
+		z-index:1;
+		display:$display;
+		font-size:36px;
+		font-weight:300;
+		color:#363636;	
+		position:$position;
+		text-align:center;
+		width:30%;
+		margin:$margin;
+		border: 1px solid;
+		border-color:#363636;
+		cursor:pointer;	
+	}
+	#progress{
+		z-index:1;
+		display:$display;
+		position:$position;
+		width: 40%;
+		height:6px;
+		margin:10px auto;
+		visibility:hidden;
+	}
 }
 
-#clicker {
-	z-index: 1;
-	display: block;
-	font-family: Oswald;
-	font-size: 36px;
+#buttomWrapper{
+
+	z-index:1;
+	display:$display;
+	margin:$margin;
+	font-size:14px;
 	font-weight: 300;
-	color: #363636;
-	position: relative;
-	/*width: 80px;*/
-	text-align: center;
-	width: 30%;
-	margin: 0 auto;
-	border: 1px solid;
-	border-color: #363636;
-	cursor: pointer;
-}
-
-#progress {
-	z-index: 1;
-	display: block;
-	position: relative;
-	width: 40%;
-	height: 6px;
-	margin: 10px auto;
-	visibility: hidden;
-}
-
-#buttonWrapper{
-	z-index: 1;
-	display: block;
-	display: block;
-	margin: 0 auto;
-	font-family: Oswald;
-	font-size: 14px;
-	font-weight: 300;
-	color: #6B6B6B;
-	position: relative;
-	width: 640px;
-	text-align: center;
-	margin-top: 30px;
-	overflow: hidden;
-}
-
-#buttonWrapperInner{
-	position: relative;
-	width: 300px;
-	height: 30px;
-	margin: 0 auto;
-}
+	color:#6B6B6B;
+	position:relative;
+	width:640px;
+	text-align:center;
+	margin-top:30px;
+	overflow:hidden;
+	#buttonWrapperInner{
+		position:$position;
+		width:300px;
+		height:30px;
+		margin:$margin;		
+		
+		#skip{
+			width:90px;
+			cursor:pointer;
+			float:left;
+			text-align:left;	
+		}
+		#reset{
+			width:110px;
+			cursor:pointer;
+			float:left;	
+		}
+		#link{
+			width:100px;
+			cursor:pointer;
+			float:left;
+			text-align:right;
+		}
+	}
 
 
-#skip{
-	width: 90px;
-	cursor: pointer;
-	float: left;
-	text-align: left;
 }
 
-#reset{
-	width: 110px;
-	cursor: pointer;
-	float: left;
+/*Añadiendo los estilos para el bootstrap*/
+.navbar.brand{
+	float:none;
+	margin:0;
+
+	}
+
+	
+@media(max-width:34em){
+	.navbar .navbar-nav>.nav-item{
+		float:none;
+		margin-left: .1rem;
+	}
+	.navbar .navbar-nav {
+		float:none !important;
+		}
+	.navbar .collapse.in, .navbar .collapsing{
+		clear:both;
+
+	}
 }
 
-#link{
-	width: 100px;
-	cursor: pointer;
-	float: left;
-	text-align: right;
-}
+
+/*Aquí terminan los estilos del bootstrap*/
 
 line {
 	stroke: #000;
