@@ -124,6 +124,11 @@ a {
 
 .navbar-brand {
   color: red !important;
+  margin: auto 15px;
+}
+
+.nav-item > .active {
+  border-bottom: 5px solid red !important;
 }
 
 @media(max-width:34em) {
