@@ -1,0 +1,24 @@
+{"name":"bubble", "children": [
+{"name":"Economía","description": "Hablemos de economía", 
+	"children": [
+	{"name":"Un banco malo", "address":"http//www.bancomundial.org"}, 
+	{"name":"alimentación", "address":"http//www.fao.org/home/es/"},
+	{"name":"una organización rara", "address":"http//www.un.org/es/index.html"}
+]},
+{"name":"Ecología", "description": "Oh no la odiosa ecología, los economistas la odian",
+	"children":[
+	{"name":"una buena  institución", "addres": "http:www.ecosur.mx"},
+	{"name":"una definición", "address": "https://es.wikipedia.org/wiki/Ecología"},
+	{"name": "No es ambientalismo ¬¬", "address":"https//es.wikipedia.org/wiki/Ecologismo"}
+]},
+{"name":"Filosofía", "description": "Filosofía jejeje",
+	"children":[
+	{"name":"un programa de radio", "addres": "http://www.loboradio.mx/columnistas.php?i=10"}
+]},
+{"name":"Souvenir", "description": "jejejeje",
+	"children":[
+	{"name":"dc", "addres": "http://www.dccomics.com/"},
+	{"name":"¿qué es el manga?", "address": "https://es.wikipedia.org/wiki/Manga"},
+	{"name": "Marvel", "address":"http://marvel.com/"}
+]}
+]}
