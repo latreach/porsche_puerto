@@ -1,7 +1,7 @@
 /**
  * Middle Bottom Text Initialization
  */
-import {textCenter} from './textCenter';
+import {textCenter} from './constructors';
 import {wrap} from './helpers';
 
 export const middleBottomText = textCenter.append('text')

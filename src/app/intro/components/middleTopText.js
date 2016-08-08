@@ -1,7 +1,7 @@
 /**
  * Middle Top Text
  */
-import {textCenter} from './textCenter';
+import {textCenter} from './constructors';
 import {wrap} from './helpers';
 
 export const middleTopText = textCenter.append('text')

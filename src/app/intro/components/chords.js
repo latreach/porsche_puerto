@@ -2,9 +2,7 @@
  * Initiate inner chords
  */
 import * as d3 from 'd3';
-import {svg} from './svg';
-import {fill, matrix, innerRadius} from './constants';
-import {chord} from './chord';
+import {svg, fill, matrix, innerRadius, chord} from './constructors';
 
 export const chords = svg.selectAll('path.chord')
   .data(chord(matrix))

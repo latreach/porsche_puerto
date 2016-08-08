@@ -1,5 +1,4 @@
-import {g} from '../g';
-import {innerRadius, NameProvider} from '../constants';
+import {g, innerRadius, NameProvider} from './components';
 
 g.append('svg:text')
   .each((d) => {
@@ -15,4 +14,6 @@ g.append('svg:text')
         (d.angle > Math.PI ? 'rotate(180)' : '');
   })
   .attr('opacity', 0)
-  .text((_, i) => NameProvider[i]);
+  .text((_, i) => NameProvider[i])
+  .transition().duration(1000)
+  .style('opacity', 1);

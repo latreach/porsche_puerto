@@ -1,6 +1,4 @@
-import {g} from '../g';
-import {arc} from '../arc';
-import {fill} from '../constants';
+import {g, arc, fill} from './components';
 
 g.append('svg:path')
   .attr('class', 'arc')

@@ -6,7 +6,7 @@
  */
 import {range} from 'd3';
 
-export default function (d) {
+export function groupTicks (d) {
   const k = (d.endAngle - d.startAngle) / d.value;
 
   return range(0, d.value, 1).map((v, i) =>

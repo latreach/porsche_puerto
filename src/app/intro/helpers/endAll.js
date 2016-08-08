@@ -6,7 +6,7 @@
  * @param {Function} callback
  * @returns void
  */
-export default function (transition, callback) {
+export function endAll (transition, callback) {
   let n = 0;
 
   transition

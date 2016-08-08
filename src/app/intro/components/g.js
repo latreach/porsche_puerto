@@ -1,9 +1,7 @@
 /**
  * Groups for chord diagram
  */
-import {svg} from './svg';
-import {chord} from './chord';
-import {NameProvider, matrix} from './constants';
+import {svg, chord, NameProvider, matrix} from './constructors';
 
 export const g = svg.selectAll('g.group')
   .data(chord(matrix).groups)

@@ -1,8 +1,7 @@
 /**
  * Ticks initialization
  */
-import {svg} from './svg';
-import {outerRadius, NameProvider} from './constants';
+import {svg, outerRadius, NameProvider} from './constructors';
 import {groupTicks} from './helpers';
 
 export const ticks = svg.selectAll('g.group').append('svg:g')
