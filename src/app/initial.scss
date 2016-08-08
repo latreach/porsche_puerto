@@ -20,31 +20,31 @@ body {
 	position:$position;
 	width:640px;
 	visibility:auto;
-
-	#clicker{
-		z-index:1;
-		display:$display;
-		font-size:36px;
-		font-weight:300;
-		color:#363636;	
-		position:$position;
-		text-align:center;
-		width:30%;
-		margin:$margin;
-		border: 1px solid;
-		border-color:#363636;
-		cursor:pointer;	
-	}
-	#progress{
-		z-index:1;
-		display:$display;
-		position:$position;
-		width: 40%;
-		height:6px;
-		margin:10px auto;
-		visibility:hidden;
-	}
 }
+#clicker{
+	z-index:1;
+	display:$display;
+	font-size:36px;
+	font-weight:300;
+	color:#363636;	
+	position:$position;
+	text-align:center;
+	width:30%;
+	margin:$margin;
+	border: 1px solid;
+	border-color:#363636;
+	cursor:pointer;	
+}
+#progress{
+	z-index:1;
+	display:$display;
+	position:$position;
+	width: 40%;
+	height:6px;
+	margin:10px auto;
+	visibility:hidden;
+	}
+
 
 #buttomWrapper{
 
@@ -59,33 +59,33 @@ body {
 	text-align:center;
 	margin-top:30px;
 	overflow:hidden;
-	#buttonWrapperInner{
-		position:$position;
-		width:300px;
-		height:30px;
-		margin:$margin;		
-		
-		#skip{
-			width:90px;
-			cursor:pointer;
-			float:left;
-			text-align:left;	
-		}
-		#reset{
-			width:110px;
-			cursor:pointer;
-			float:left;	
-		}
-		#link{
-			width:100px;
-			cursor:pointer;
-			float:left;
-			text-align:right;
-		}
-	}
-
-
 }
+#buttonWrapperInner{
+	position:$position;
+	width:300px;
+	height:30px;
+	margin:$margin;	
+}	
+		
+#skip{
+	width:90px;
+	cursor:pointer;
+	float:left;
+	text-align:left;	
+}
+#reset{
+	width:110px;
+	cursor:pointer;
+	float:left;	
+}
+#link{
+	width:100px;
+	cursor:pointer;
+	float:left;
+	text-align:right;
+}
+	
+
 
 /*Añadiendo los estilos para el bootstrap*/
 .navbar-brand{
