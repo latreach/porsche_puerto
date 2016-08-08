@@ -1,9 +1,9 @@
 /**
  * Outer arcs
  */
-import {svg} from 'd3';
+import {arc as _arc} from 'd3';
 import {innerRadius, outerRadius} from './constants';
 
-export const arc = svg.arc()
+export const arc = _arc()
   .innerRadius(innerRadius)
   .outerRadius(outerRadius);

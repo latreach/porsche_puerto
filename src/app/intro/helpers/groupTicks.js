@@ -1,7 +1,7 @@
 /**
  * Returns an array of tick angles and labels, given a group
  * @param  {Object} d - A D3 array, expected endAngle, startAngle and value
- *      properties
+ *                      properties
  * @returns {Array}
  */
 import {range} from 'd3';

@@ -11,6 +11,7 @@ import * as d3 from 'd3';
 import {default as wrap} from './wrap';
 import {default as endAll} from './endAll';
 import {middleTopText} from '../middleTopText';
+import {step, buttonTexts} from '../steps';
 
 export default function changeTopText (
   newText,
@@ -39,7 +40,7 @@ export default function changeTopText (
     .call(endAll, () => {
       if (finalText === true) {
         d3.select('#clicker')
-          // .text(buttonTexts[counter - 2])
+          .text(buttonTexts[step - 2])
           .style('pointer-events', 'auto')
           .transition().duration(400)
           .style('border-color', '#363636')

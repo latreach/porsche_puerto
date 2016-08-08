@@ -63,24 +63,24 @@ module.exports = {
         loader: 'imports?jQuery=jquery'
       },
       {test: /\.json$/, loader: 'json-loader'},
-      {test: /\.csv$/, loader: 'dsv-loader'}
-      // { test: /\.css$/, loader: 'raw-loader' },
-      // {
-      //   test: /initial\.scss$/,
-      //   loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
-      // },
+      {test: /\.csv$/, loader: 'dsv-loader'},
+      {test: /\.css$/, loader: 'raw-loader'},
+      {
+        test: /initial\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+      }
     ]
   },
 
   plugins: [
-    // new ExtractTextPlugin('initial.css', { allChunks: true }),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new CopyWebpackPlugin([{from: 'src/assets', to: 'assets'}]),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      chunksSortMode: 'dependency',
+      chunksSortMode: 'auto',
       cache: false
     }),
+    new ExtractTextPlugin('initial.css', {allChunks: true}),
     new HtmlElementsPlugin({headTags: require('./head-config.common')}),
     /*
      * new webpack.optimize.CommonsChunkPlugin({
@@ -104,5 +104,4 @@ module.exports = {
     clearImmediate: false,
     setImmediate: false
   }
-
 };

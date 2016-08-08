@@ -1,18 +1,12 @@
 import {g} from '../g';
-import {innerRadius, NameProvider} from '../constants';
+import {arc} from '../arc';
+import {fill} from '../constants';
 
-g.append('svg:g')
-  .each((d) => {
-    d.angle = (d.startAngle + d.endAngle) / 2;
-    return d.angle;
-  })
-  .attr('dy', 0.35 + 'em')
-  .attr('class', 'titles')
-  .attr('text-anchor', (d) => d.angle > Math.PI ? 'end' : null)
-  .attr('transform', (d) => {
-    return 'rotate(' + (d.angle * 180 / Math.PI - 90) + ')' +
-        'translate(' + (innerRadius + 55) + ')' +
-        (d.angle > Math.PI ? 'rotate(180)' : '');
-  })
-  .attr('opacity', 0)
-  .text((_, i) => NameProvider[i]);
+g.append('svg:path')
+  .attr('class', 'arc')
+  .style('stroke', (d) => fill(d.index))
+  .style('fill', (d) => fill(d.index))
+  .attr('d', arc)
+  .style('opacity', 0)
+  .transition().duration(1000)
+  .style('opacity', 0.4);
