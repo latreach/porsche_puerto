@@ -132,20 +132,26 @@ a {
 }
 
 @media(max-width:34em) {
-	.navbar-brand {
-		float: none;
-		margin: 0;
-  }
-
-	.navbar .navbar-nav > .nav-item {
-  	float: none;
-    margin-left: 0.1rem;
-  }
-
   .navbar .navbar-nav {
  		float: none !important;
   }
   .navbar .collapse.in, .navbar .collapsing {
   	clear: both;
 	}
+}
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 150%; /* aspect ratio */
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -41,7 +41,7 @@ export const margin = {
   left: 25
 };
 
-export const height = 650 - margin.top - margin.bottom;
-export const width  = 700 - margin.left - margin.right;
+export const height = window.innerHeight - margin.top - margin.bottom;
+export const width  = window.innerWidth - margin.left - margin.right;
 export const innerRadius = Math.min(width, height) * 0.39;
 export const outerRadius = innerRadius * 1.04;

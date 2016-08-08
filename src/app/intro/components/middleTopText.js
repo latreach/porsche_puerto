@@ -12,8 +12,6 @@ export const middleTopText = textCenter.append('text')
   .attr('dy', 1 + 'em')
   .attr('opacity', 1)
   .text(`
-      For the Dutch version of the Deloitte Global Mobile Consumer Survey.
-      Deloitte asked 2000 residents of the Netherlands about their mobile phone
-      behaviour
+      Tendencias
   `)
   .call(wrap, 350);
