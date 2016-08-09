@@ -5,7 +5,7 @@
  * @param {float}  width
  * @return void
  */
-export default function (text, width) {
+export function wrap (text, width) {
   const words = text.text().split(/\s+/).reverse();
   const lineHeight = 1.4;
   const y = text.attr('y');

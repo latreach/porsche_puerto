@@ -36,27 +36,16 @@ module.exports = {
     ],
 
     loaders: [
-      {
-        test: /\.html$/,
-        loader: 'raw'
-        // exclude: [ helpers.root('src/index.html') ]
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['raw', 'sass']
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/
-      },
+      {test: /\.html$/, loader: 'raw'},
+      {test: /\.scss$/, loaders: ['raw', 'sass']},
+      {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
       {
         test: /\.woff(2)?(\?v=.+)?$/,
         loader: 'url-loader?limit=10000&mimetype=application/font-woff'
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=.+)?$/,
-        loader: 'file-loader'
+        test: /\.(ttf|eot|svg|otf)(\?v=.+)?$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
       },
       {
         test: /bootstrap\/dist\/js\/umd\//,
@@ -73,20 +62,15 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('initial.css', { allChunks: true }),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new CopyWebpackPlugin([{from: 'src/assets', to: 'assets'}]),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      chunksSortMode: 'dependency',
+      chunksSortMode: 'auto',
       cache: false
     }),
+    new ExtractTextPlugin('initial.css', {allChunks: true}),
     new HtmlElementsPlugin({headTags: require('./head-config.common')}),
-    /*
-     * new webpack.optimize.CommonsChunkPlugin({
-     *   name: ['polyfills', 'vendor'].reverse()
-     * }),
-     */
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
@@ -104,5 +88,4 @@ module.exports = {
     clearImmediate: false,
     setImmediate: false
   }
-
 };

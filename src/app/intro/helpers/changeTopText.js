@@ -7,13 +7,10 @@
  * @param xloc
  * @param w
  */
-import * as d3 from 'd3';
-import {default as wrap} from './wrap';
-import {default as endAll} from './endAll';
-import {middleTopText} from '../middleTopText';
-import {step, buttonTexts} from '../steps';
+import {endAll} from './endAll';
+import {wrap, middleTopText} from '../components';
 
-export default function changeTopText (
+export function changeTopText (
   newText,
   loc,
   delayDisappear,
@@ -36,15 +33,5 @@ export default function changeTopText (
         .call(wrap, w);
     })
     .transition().delay(700 * delayAppear).duration(700)
-    .attr('opacity', 1)
-    .call(endAll, () => {
-      if (finalText === true) {
-        d3.select('#clicker')
-          .text(buttonTexts[step - 2])
-          .style('pointer-events', 'auto')
-          .transition().duration(400)
-          .style('border-color', '#363636')
-          .style('color', '#363636');
-      }
-    });
+    .attr('opacity', 1);
 }

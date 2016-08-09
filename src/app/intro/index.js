@@ -1,1 +1,1 @@
-import './steps';
+import './components';
