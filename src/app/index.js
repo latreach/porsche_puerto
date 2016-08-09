@@ -1,2 +1,2 @@
 import './intro';
-import './diagrama';
+import './iot';

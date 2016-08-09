@@ -8,7 +8,7 @@ export const mainTitle = textContainer.append('text')
   .attr('y', (-mainSquareSize / 2 - 12 * 10) + 'px')
   .attr('dy', 1 + 'em')
   .attr('opacity', 0)
-  .text('Bienvenidos a la era del futuro')
+  .text('Tendencias tecnológicas')
   .call(wrap, 350)
   .transition().duration(2000)
   .style('opacity', 1);
