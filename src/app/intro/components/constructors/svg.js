@@ -2,7 +2,7 @@
  * Initialize the SVG
  */
 import * as d3 from 'd3';
-import {margin} from './constants';
+import {margin, width, height} from './constants';
 
 export const svg = d3.select('#intro-animation')
   .append('div')
@@ -14,4 +14,11 @@ export const svg = d3.select('#intro-animation')
     )
     .attr('preserveAspectRatio', 'xMidYMid meet')
     .attr('class', 'svg-content-responsive')
-  .append('g');
+  .append('g')
+    .attr(
+      'transform',
+      'translate(' +
+        (margin.left + width / 2) + ',' +
+        (margin.top + height / 2) +
+      ')'
+    );

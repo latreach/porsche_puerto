@@ -1,1 +1,1 @@
-import './01_Rectangulo';
+import './components';
