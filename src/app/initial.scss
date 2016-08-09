@@ -6,85 +6,6 @@ body {
 	text-align: center;
 }
 
-#clickerWrapper {
-	top: 0;
-	z-index: 1;
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	width: 640px;
-	visibility: auto;
-}
-
-#clicker {
-	z-index: 1;
-	display: block;
-	font-family: 'Poiret One';
-	font-size: 36px;
-	font-weight: 300;
-	color: #363636;
-	position: relative;
-	text-align: center;
-	width: 30%;
-	margin: 0 auto;
-	border: 1px solid;
-	border-color: #363636;
-	cursor: pointer; }
-
-#progress {
-	z-index: 1;
-	display: block;
-	position: relative;
-	width: 40%;
-	height: 6px;
-	margin: 10px auto;
-	visibility: hidden;
-}
-
-#buttonWrapper{
-	z-index: 1;
-	display: block;
-	display: block;
-	margin: 0 auto;
-	font-family: Oswald;
-	font-size: 14px;
-	font-weight: 300;
-	color: #6B6B6B;
-	position: relative;
-	width: 640px;
-	text-align: center;
-	margin-top: 30px;
-	overflow: hidden;
-}
-
-#buttonWrapperInner{
-	position: relative;
-	width: 300px;
-	height: 30px;
-	margin: 0 auto;
-}
-
-
-#skip{
-	width: 90px;
-	cursor: pointer;
-	float: left;
-	text-align: left;
-}
-
-#reset{
-	width: 110px;
-	cursor: pointer;
-	float: left;
-}
-
-#link{
-	width: 100px;
-	cursor: pointer;
-	float: left;
-	text-align: right;
-}
-
 line {
 	stroke: #000;
 	stroke-width: 1px;
@@ -102,6 +23,12 @@ text {
 	font-size: 20px;
 	font-weight: 300;
 	text-align: center;
+}
+
+.mainTitle {
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
 }
 
 path.chord {
@@ -131,13 +58,23 @@ a {
   border-bottom: 5px solid red !important;
 }
 
-@media(max-width:34em) {
-  .navbar .navbar-nav {
- 		float: none !important;
+@media(max-width: 34em) {
+  .navbar .navbar-nav > .nav-item {
+    float: none;
+    margin-left: 0.1rem;
   }
+
+  .navbar .navbar-nav {
+		float: none !important;
+  }
+
   .navbar .collapse.in, .navbar .collapsing {
-  	clear: both;
+		clear: both;
 	}
+
+  .mainTitle {
+    font-size: 100%;
+  }
 }
 
 .svg-container {
