@@ -4,5 +4,5 @@ export default function collapse(d){
 	d._children.forEach(collapse);	
 	d.children = null;
 	
-}	
+	}	
 }

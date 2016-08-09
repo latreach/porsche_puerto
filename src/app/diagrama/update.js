@@ -1,38 +1,41 @@
 import {tree} from './arbol';
 import {svg} from './svg';
-import {root} from '/root';
+import {root} from './root';
 import {click} from './click';
 import {connector} from './connector';
-import {duration} from './constants';
+import {duration, i} from './constants';
 
 export default function update(source){
 	let nodes = tree(root).descendants();
 	links = nodes.slice(1);
-	nodes.forEach((d)=> d.y = d.depth * 180;);
+	nodes.forEach((d)=> d.y = d.depth * 180);
 	let node  = svg.selectAll("g.node")
-		.data(nodes, (d) => d.id || (d.id = ++i););
+		.data(nodes, (d) =>  {
+			let i = 0;
+			return d.id || (d.id = ++i);
+		});
 	let nodeEnter = node.enter().append("g")
 		.attr("class","node")
-		.attr("transform", (d) => "translate(" + source.y0 + "," + source.X0 + ")"; )
+		.attr("transform", (d) => "translate(" + source.y0 + "," + source.X0 + ")" )
 		.on("click", click);
 	
 	nodeEnter.append("circle")
 		.attr("r", 7)
-		.style("fill", (d) => d.children ? "#549B57": "#5E8EB7"; );
+		.style("fill", (d) => d.children ? "#549B57": "#5E8EB7" );
 	nodeEnter.append("text")
-		.attr("x", (d) => d.children || d._children ? -10:10;)
-		.attr("text-anchor",(d) => d.children || d._children ? -10:10;)
+		.attr("x", (d) => d.children || d._children ? -10:10)
+		.attr("text-anchor",(d) => d.children || d._children ? -10:10)
 		.attr("dy", ".25em")
-		.attr("text-anchor", (d)=> d.children||d._children ? "end": "start";)
-		.text((d)=> d.data.name;)
+		.attr("text-anchor", (d)=> d.children||d._children ? "end": "start")
+		.text((d)=> d.data.name)
 		.style("fill-opacity", 1);
 	let nodeUpdate = node.merge(nodeEnter).transition()
 		.duration(duration)
-		.attr("transform", (d) => "translate(" + d.y + "," + d.x + ")";)
+		.attr("transform", (d) => "translate(" + d.y + "," + d.x + ")")
 		
 	nodeUpdate.select("circle")
 		.attr("r", 51)
-		.style("fill", (d)=> d.children ? "#549B57": "#5E83B7";)
+		.style("fill", (d)=> d.children ? "#549B57": "#5E83B7")
 	
 
 	nodeUpdate.select("text")
@@ -40,7 +43,7 @@ export default function update(source){
       	
 	let nodeExit = node.exit().transition()
 		.duration(duration)
-		.attr("transform", (d)=> "translate(" + source.y + "," + source.x + ")";)
+		.attr("transform", (d)=> "translate(" + source.y + "," + source.x + ")")
 		.remove();
 	nodeExit.select("circle")
 		.attr("r", 7);	
