@@ -1,4 +1,4 @@
-import {update} from './update';
+import {update} from '../update';
 
 export function click (d) {
   if (d.children) {

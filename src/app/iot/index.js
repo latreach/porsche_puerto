@@ -1,1 +1,1 @@
-export * from './node';
+import './initiateNetwork';

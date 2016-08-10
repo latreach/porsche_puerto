@@ -1,4 +1,3 @@
-import {width, height} from './constants';
+import {height, width} from './constants';
 
 export const tree = d3.tree().size([height, width]);
-console.log(tree);

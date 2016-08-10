@@ -1,5 +1,7 @@
 import {tree} from './tree';
 import {root} from './root';
 
-console.log(tree);
-export const nodes = tree.nodes(root).reverse();
+export const nodes = tree(root).descendants();
+nodes.forEach(function (d) {
+  d.y = d.depth * 180;
+});
