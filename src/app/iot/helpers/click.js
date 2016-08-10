@@ -1,5 +1,4 @@
-import {update} from '../update';
-
+import {render} from '../render';
 export function click (d) {
   if (d.children) {
     d._children = d.children;
@@ -8,5 +7,4 @@ export function click (d) {
     d.children = d._children;
     d._children = null;
   }
-  update(d);
 }
