@@ -1,5 +1,3 @@
-//import {select} from 'd3';
-import * as d3 from 'd3';
 import {height, width, margin} from './constants';
 import {root} from './root';
 import {collapse} from './collapse';
