@@ -1,9 +1,14 @@
-import * as d3 from 'd3';
-import {margin, height, width} from './constants';
+import {svg} from './constants';
+import {line_1, line_2} from '../line';
+import {data} from '../linear'
+import {g} from './constants';
 
-export const svg = d3.select('#exponencial')
-	.append("width", width + margin.left + margin.right)
-	.attr("height", height + margin.top + margin.bottom)
-	.append("g")
-	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+export const lineares = g.selectAll(".linear")
+  .data(data)
+  .enter().append("g")
+  .attr("class", "city");
+
+lineares.append("path")
+  .attr("class", "line")
+  .attr("d", (d) => line1(d.values))
 
