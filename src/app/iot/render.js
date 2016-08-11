@@ -1,5 +1,5 @@
-import {node} from './selectors';
-import {nodes} from './network';
+import {svg} from './selectors';
+import {root, tree} from './network';
 import {
   createCircles,
   createText,
@@ -9,17 +9,24 @@ import {
   updateNodes
 } from './helpers';
 
-export function render (source, bootstrap) {
-  console.log(source);
-  if (bootstrap !== true) {
-    if (source.children && bootstrap) {
-      source._children = source.children;
-      source.children = null;
-    } else {
-      source.children = source._children;
-      source._children = null;
-    }
+export function render (source) {
+  if (source.children) {
+    source._children = source.children;
+    source.children = null;
+  } else {
+    source.children = source._children;
+    source._children = null;
   }
+
+  const nodes = tree(root).descendants();
+
+  nodes.forEach(function (d, i) {
+    d.y = d.depth * 180;
+    d.id = i;
+  });
+
+  const node = svg.selectAll('g.node')
+    .data(nodes, (d) => d.id);
 
   const nodeEnter = node.enter().append('g')
     .attr('class', 'node')
@@ -29,10 +36,9 @@ export function render (source, bootstrap) {
     )
     .on('click', render);
 
-  nodeEnter
-      .call(createCircles)
-      .call(createText)
-      .call(updateNodes);
+  nodeEnter.call(createCircles);
+  nodeEnter.call(createText);
+  nodeEnter.call(updateNodes);
 
   node.exit()
     .transition().duration(duration)

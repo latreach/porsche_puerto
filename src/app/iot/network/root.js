@@ -1,4 +1,4 @@
-import phylo from './data.json';
+import phylo from './flare.json';
 import {height, collapse} from '../helpers';
 export const root = d3.hierarchy(phylo, (d) => d.children);
 root.x0 = height / 2;
