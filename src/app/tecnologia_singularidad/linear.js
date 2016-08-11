@@ -29,7 +29,7 @@ export function type (d, _, columns) {
   return d;
 }
 
-d3.csv('./datos/linear.csv', type, function (error, data) {
+d3.csv('./assets/data/linear.csv', type, function (error, data) {
   if (error) {
     throw error;
   }
