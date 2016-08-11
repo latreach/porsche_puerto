@@ -1,4 +1,5 @@
 import {duration} from '../helpers';
+import {click} from './click';
 
 function updateCircles (selector) {
   selector.select('circle')
@@ -28,13 +29,13 @@ function createNodes (selector) {
 }
 
 export function enterNode (selector, source) {
-  selector
+  const nodes = selector
     .append('g')
       .attr('class', 'node')
       .attr('transform', function () {
         return 'translate(' + source.y0 + ',' + source.x0 + ')';
       })
-      // .on('click', click)
-    .call(createNodes)
-    .call(updateNode);
+      .on('click', click)
+    .call(createNodes);
+    // .call(updateNode);
 }
