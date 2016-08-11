@@ -1,9 +1,14 @@
 export const margin = {top: 20, right: 80, bottom: 30, left: 50};
-export const width = 1100 - margin.left - margin.right;
-export const height = 800 - margin.top - margin.bottom;
-export const svg = d3.select('#tecnologia-animation').append('svg')
+export const width = 1200 - margin.left - margin.right;
+export const height = 600 - margin.top - margin.bottom;
+export const svg = d3.select('#tecnologia-animation')
+  .append('div')
+  .attr("class", "svg-container")
+  .append("svg")
   .attr('width', width + margin.right + margin.left)
-  .attr('height', height + margin.top + margin.bottom);
+  .attr('height', height + margin.top + margin.bottom)
+  .attr("preserveAspectRatio", "xMidYMid meet")
+  .attr("class", "svg-content-responsive");
 
 export const g = svg.append('g')
   .attr(
@@ -67,17 +72,19 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
   g.append('g')
     .attr('class', 'axis axis--x')
     .attr('transform', 'translate(0,' + height + ')')
+    .attr("stroke-width", 1.2)
     .call(d3.axisBottom(x));
 
   g.append('g')
-      .attr('class', 'axis axis--y')
+    .attr('class', 'axis axis--y')
+    .attr("stroke-width", 5)
       .call(d3.axisLeft(y))
     .append('text')
-      .attr('transform', 'rotate(-90)')
+      .attr('transform', 'rotate(-10)')
       .attr('y', 6)
       .attr('dy', '0.71em')
       .attr('fill', 'steelblue')
-      .text('me quiero volver mono');
+      .text('');
 
   const linea = g.selectAll('.linea')
     .data(linear).enter()
@@ -89,10 +96,15 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
     .attr('d', function (d) {
       return line(d.values);
     })
-    .style('stroke', 'transparent')
+    .style('stroke', '#789044')
+    .style("stroke-opacity", 0.7)
+    .attr("stroke-width", 5)
+    .attr("stroke-dasharray", ("10,10"))
+    .style("stroke", function(d) { return z(this.parentNode.__data__.values); })
+    
     .each(function (d, i) {
       d3.select(this)
-        .transition().duration(2000).delay(1000 * i)
+        .transition().duration(7000).delay(3500 * i)
         .style('stroke', function (f) {
           return z(f.id);
         });
@@ -106,8 +118,8 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
       return 'translate(' + x(d.value.tiempo) + ',' + y(d.value.linear) + ')';
     })
     .attr('x', 3)
-    .attr('dy', '0.35em')
-    .style('font', '10px sans-serif')
+    .attr('dy', '0.75em')
+    .style('font', '12px ubuntu')
     .text(function (d) {
       return d.id;
     });
