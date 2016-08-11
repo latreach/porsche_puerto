@@ -1,4 +1,4 @@
-export function createNodes (selector) {
+export function createCircles (selector) {
   selector.append('circle')
     .attr('r', 1e-6)
     .style('fill', function (d) {
