@@ -96,12 +96,11 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
     .attr('d', function (d) {
       return line(d.values);
     })
-    .style('stroke', '#789044')
-    .style("stroke-opacity", 0.7)
+    .style('stroke', 'transparent')
+  //.style("stroke-opacity", 0.7)
     .attr("stroke-width", 5)
     .attr("stroke-dasharray", ("10,10"))
-    .style("stroke", function(d) { return z(this.parentNode.__data__.values); })
-    
+  //.style("stroke", function(d) { return z(this.parentNode.__data__.values); })
     .each(function (d, i) {
       d3.select(this)
         .transition().duration(7000).delay(3500 * i)
@@ -119,7 +118,7 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
     })
     .attr('x', 3)
     .attr('dy', '0.75em')
-    .style('font', '12px ubuntu')
+    .style('font', '10px ubuntu')
     .text(function (d) {
       return d.id;
     });
