@@ -29,14 +29,14 @@ d3.csv("./assets/data/latreach.csv", function(error, data) {
     throw error;
   }
 
-  const root = stratify(data)
+  const raiz = stratify(data)
     .sum(function(d) { 
           return d.value; })
     .sort(function(a, b) { 
           return b.value - a.value;});
-  pack(root)
-  const focus = root;
-  const nodes = root.descendants();
+  pack(raiz)
+  const focus = raiz;
+  const nodes = raiz.descendants();
 
   const circle = svg.selectAll("circle")
     .data(nodes)
@@ -65,7 +65,7 @@ d3.csv("./assets/data/latreach.csv", function(error, data) {
     .on("click", function(){
       zoom(focus);});
   
-  zoomTo([root.x, root.y, root.r * 2 + margin]);
+  zoomTo([raiz.x, raiz.y, raiz.r * 2 + margin]);
 
 
  function zoom(d, focus){
