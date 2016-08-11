@@ -1,10 +1,14 @@
 export const margin = {top: 20, right: 80, bottom: 30, left: 50};
-export const width = 1200 - margin.left - margin.right;
-export const height = 600 - margin.top - margin.bottom;
+export const width = 1000 - margin.left - margin.right;
+export const height = 500 - margin.top - margin.bottom;
 export const svg = d3.select('#tecnologia-animation')
   .append('div')
   .attr("class", "svg-container")
   .append("svg")
+  .attr(
+    'viewBox', 
+    [0,0,window.innerWidth, window.innerHeight -55].join(' ')
+    )
   .attr('width', width + margin.right + margin.left)
   .attr('height', height + margin.top + margin.bottom)
   .attr("preserveAspectRatio", "xMidYMid meet")
@@ -77,8 +81,8 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
 
   g.append('g')
     .attr('class', 'axis axis--y')
-    .attr("stroke-width", 5)
-      .call(d3.axisLeft(y))
+    .attr("stroke-width", 3)
+    .call(d3.axisLeft(y))
     .append('text')
       .attr('transform', 'rotate(-10)')
       .attr('y', 6)
@@ -86,6 +90,10 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
       .attr('fill', 'steelblue')
       .text('');
 
+  //modifcando el texto de los ejes
+  g.selectAll(".axis text")
+    .attr("transform", "rotate(-35)")
+    .style("font", "17px sans-serif");
   const linea = g.selectAll('.linea')
     .data(linear).enter()
     .append('g')
@@ -96,12 +104,11 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
     .attr('d', function (d) {
       return line(d.values);
     })
-    .style('stroke', '#789044')
-    .style("stroke-opacity", 0.7)
+    .style('stroke', 'transparent')
+  //.style("stroke-opacity", 0.7)
     .attr("stroke-width", 5)
     .attr("stroke-dasharray", ("10,10"))
-    .style("stroke", function(d) { return z(this.parentNode.__data__.values); })
-    
+  //.style("stroke", function(d) { return z(this.parentNode.__data__.values); })
     .each(function (d, i) {
       d3.select(this)
         .transition().duration(7000).delay(3500 * i)
@@ -116,11 +123,17 @@ d3.csv('./assets/data/linear.csv', type, function (error, data) {
     })
     .attr('transform', function (d) {
       return 'translate(' + x(d.value.tiempo) + ',' + y(d.value.linear) + ')';
-    })
+     })
     .attr('x', 3)
     .attr('dy', '0.75em')
-    .style('font', '12px ubuntu')
-    .text(function (d) {
-      return d.id;
-    });
+    .style('font', '20px ubuntu')
+    .style("font-style", "italic")
+   .each(function (d, i) {
+      d3.select(this)
+       .transition().duration(7000).delay(3500 * i)
+    .style('fill', function (f) {
+       return z(f.id);
+     });
+   })
+  .text(function(d){return d.id;});
 });
