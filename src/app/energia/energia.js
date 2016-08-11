@@ -1,5 +1,5 @@
-export const margin  = 20;
-export const diamete = 900;
+export const margin   = 20;
+export const diameter = 900;
 //creando la gráfica
 export const svg = d3.select("#energia-animation").append("svg")
   .attr("width", diameter)
@@ -21,6 +21,8 @@ export const pack = d3.pack()
   .size([diameter-margin, diameter-margin])
   .padding(100);
 
+
+
 //llamando los datos
 d3.csv("./assets/data/latreach.csv", function(error, data) {
   if (error){ 
@@ -33,9 +35,8 @@ d3.csv("./assets/data/latreach.csv", function(error, data) {
     .sort(function(a, b) { 
           return b.value - a.value;});
   pack(root)
-  const focus = root,
-  nodes = root.descendants(), 
-  view;  
+  const focus = root;
+  const nodes = root.descendants();
 
   const circle = svg.selectAll("circle")
     .data(nodes)
@@ -67,7 +68,7 @@ d3.csv("./assets/data/latreach.csv", function(error, data) {
   zoomTo([root.x, root.y, root.r * 2 + margin]);
 
 
- function zoom(d){
+ function zoom(d, focus){
     const focus0 =focus; focus = d;
     const transition = d3.transition()
       .duration(d3.event.altKey ? 7500: 750)
@@ -88,8 +89,8 @@ d3.csv("./assets/data/latreach.csv", function(error, data) {
       .each("end", function(d){
         if (d.parent !== focus) this.style.display = "none";});
 }
-
-function zoomTo(v){
+ function zoomTo(v){
+    let view = 0;
     var k = diameter / v[2]; view = v;
     node.attr("transform", function(d){
       return "translate(" + (d.x- v[0]) * k + "," + (d.y-v[1])*k + ")";});
