@@ -22,7 +22,7 @@ export const pack = d3.pack()
   .padding(100);
 
 //llamando los datos
-d3.csv("data", function(error, data) {
+d3.csv("./assets/data/latreach.csv", function(error, data) {
   if (error){ 
     throw error;
   }
