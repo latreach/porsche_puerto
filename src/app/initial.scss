@@ -102,3 +102,24 @@ a {
 .line{
         fill:none;
 }
+
+
+/*   estilos de la gráfica de energía*/
+
+.node{cursor:pointer;
+}
+
+.node--hover circle{
+      stroke:#000;
+      stroke-width:1.2px;
+ }
+
+.node--leaf{
+      fill:white;
+      }
+
+
+
+
+
+
