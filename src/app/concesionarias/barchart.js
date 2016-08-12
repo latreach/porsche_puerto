@@ -28,7 +28,7 @@ d3.csv("./assets/data/pie_data_1.csv", function(error, data){
     d.dimension = +d.dimension;  
   });
   x.domain(data.map(function(d){return d.tipo;}));
-  y.domain([0,d3.max(data, function(d){return d.dimension;})]);
+  y.domain([0,d3.max(data, function(d){return d.dimension})]);
 
   svg.selectAll('.bar')
     .data(data)
@@ -40,11 +40,9 @@ d3.csv("./assets/data/pie_data_1.csv", function(error, data){
     .attr("height", function(d){return height - y(d.dimension);})
     .style("fill", function(d){return color(d.tipo)});
   svg.append("g")
-    .attr('class', 'axis axis--x')
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0" + height + ")")
     .call(d3.axisBottom(x));
   svg.append("g")
-    .attr('class', 'axis axis--y')
     .call(d3.axisLeft(y));
 });
 
