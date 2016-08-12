@@ -1,3 +1,3 @@
-import {width, height, margin} from './constants';
+import {diameter, margin} from './constants';
 export const packer = d3.pack()
-  .size([width - margin, height - margin]);
+  .size([diameter - margin, diameter - margin]);

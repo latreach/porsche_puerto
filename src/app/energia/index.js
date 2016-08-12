@@ -1,1 +1,1 @@
-import './node';
+import './svg';
