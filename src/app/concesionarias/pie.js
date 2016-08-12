@@ -6,7 +6,7 @@ export const data = [
   {label: '84% prefiere probar producto', count: 25}
 ];
 
-
+console.log(data);
 export const width  = 960;
 export const height = 500;
 export const radius = Math.min(width, height)/2;
@@ -14,6 +14,7 @@ export const donutWidth = 100;
 export const color = d3.scaleOrdinal()
   .range(["#98abc5", "#8a89a6", "#7n6888", "#6b486b","#a05d56","#d0743c"]);
 
+console.log(color);
 export const arc = d3.arc()
   .innerRadius(radius -donutWidth)
   .outerRadius(radius);
