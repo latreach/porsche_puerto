@@ -1,5 +1,5 @@
-// import './intro';
+import './intro';
 // import './tecnologia_singularidad';
 import './concesionarias';
-// import './iot';
-// import './energia';
+import './iot';
+import './energia';
