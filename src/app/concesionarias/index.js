@@ -1,12 +1,12 @@
 const width = 960;
-const height = 500;
-const radius = Math.min(width, height) / 2;
-const donutWidth = 50;
+const height = 700;
+const radius = Math.min(width, height)/4;
+const donutWidth = -150;
 const color = d3.scaleOrdinal()
-  .range(['#98abc5', '#8a89a6', '#7b6888', '#64486b', '#a05d56']);
+  .range(['#E83C0E', '#FFDB2C', '#6ADE70', '#F82E83', '#009a5c']);
 const arc = d3.arc()
   .innerRadius(radius - donutWidth)
-  .outerRadius(radius - 70);
+  .outerRadius(radius - 50);
 const pie = d3.pie().value((d) => d.dimension);
 
 const svg = d3.select('#concesionarias-animacion')
@@ -42,6 +42,8 @@ d3.csv('./assets/data/pie_data.csv', type, function (error, data) {
       return 'translate(' + arc.centroid(d) + ')';
     })
     .attr('dy', '.35em')
+    .style('font-size', '18px')
+    .style('fill', '#333333')
     .text(function (d) {
       return d.data.tipo;
     });
