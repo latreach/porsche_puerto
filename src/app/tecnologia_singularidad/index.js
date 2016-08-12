@@ -1,33 +1,17 @@
-export const margin = {top: 20, right: 80, bottom: 30, left: 50};
-export const width = 1500 - margin.left - margin.right;
-export const height = 500 - margin.top - margin.bottom;
-export const svg = d3.select('#tecnologia-animation')
-  .append('div')
-  .attr('class', 'svg-container')
-  .append('svg')
-  .attr(
-    'viewBox',
-    [0, 0, window.innerWidth, window.innerHeight - 55].join(' ')
-  )
-  .attr('width', width + margin.right + margin.left)
-  .attr('height', height + margin.top + margin.bottom)
-  .attr('preserveAspectRatio', 'xMidYMid meet')
-  .attr('class', 'svg-content-responsive');
-export const g = svg.append('g')
-  .attr(
-    'transform',
-    'translate(' + margin.left + ',' + margin.top + ')'
-  );
-export const parseTime = d3.timeParse('%Y%m%d');
-export const x = d3.scaleTime().range([0, width]);
-export const y = d3.scaleLinear().range([height, 0]);
-export const z = d3.scaleOrdinal(d3.schemeCategory10);
-export const line = d3.line()
-  .curve(d3.curveBasis)
-  .x((d) => x(d.tiempo))
-  .y((d) => y(d.linear));
+const margin = {top: 20, right: 100, bottom: 30, left: 50};
+const width = window.innerWidth * 0.75 - margin.left - margin.right;
+const height = window.innerHeight - margin.top - margin.bottom - 60;
+const parseTime = d3.timeParse('%Y%m%d');
 
-export function type (d, _, columns) {
+function formatPower (d) {
+  const superscript = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+
+  return (d + '').split('').map(function (c) {
+    return superscript[c];
+  }).join('');
+};
+
+function type (d, _, columns) {
   d.tiempo = parseTime(d.tiempo);
   for (let i = 1, n = columns.length, c; i < n; ++i) {
     c = columns[i];
@@ -35,12 +19,25 @@ export function type (d, _, columns) {
   }
   return d;
 }
-const superscript = '⁰¹²³⁴⁵⁶⁷⁸⁹';
-const formatPower = function (d) {
-  return (d + '').split('').map(function (c) {
-    return superscript[c];
-  }).join('');
-};
+
+const x = d3.scaleTime().range([0, width]);
+const y = d3.scaleLinear().range([height, 0]);
+const z = d3.scaleOrdinal(d3.schemeCategory10);
+
+const svg = d3.select('#tecnologia-animation')
+  .append('div')
+    .attr('class', 'svg-container')
+  .append('svg')
+    .attr('class', 'svg-content-responsive')
+    .attr('viewBox', [0, 0, width, height].join(' '))
+    .attr('preserveAspectRatio', 'xMidYMid meet');
+
+const g = svg.append('g')
+  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+const line = d3.line().curve(d3.curveBasis)
+  .x((d) => x(d.tiempo))
+  .y((d) => y(d.linear));
 
 d3.csv('./assets/data/linear_2.csv', type, function (error, data) {
   if (error) {
@@ -56,9 +53,7 @@ d3.csv('./assets/data/linear_2.csv', type, function (error, data) {
     };
   });
 
-  x.domain(d3.extent(data, function (d) {
-    return d.tiempo;
-  }));
+  x.domain(d3.extent(data, (d) => d.tiempo));
 
   y.domain([
     d3.min(linear, function (c) {
@@ -79,7 +74,7 @@ d3.csv('./assets/data/linear_2.csv', type, function (error, data) {
 
   g.append('g')
     .attr('class', 'axis axis--x')
-    .attr('transform', 'translate(0,' + height + ')')
+    .attr('transform', 'translate(0,' + height - 60 + ')')
     .attr('stroke-width', 1.2)
     .call(d3.axisBottom(x));
 
