@@ -84,6 +84,7 @@ a {
   padding-bottom: 150%; /* aspect ratio */
   vertical-align: middle;
   overflow: hidden;
+  max-height: 700px;
 }
 
 .svg-content-responsive {
@@ -118,8 +119,4 @@ a {
       fill:white;
       }
 
-
-
-
-
-
+@import 'timeline';
