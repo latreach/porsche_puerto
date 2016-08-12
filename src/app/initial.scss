@@ -118,5 +118,15 @@ a {
 .node--leaf{
       fill:white;
       }
+/*estilos del gráfico de dona */
+.arc text{
+font: 10px sans-serif;
+text-anchor: middle;
+}
+
+.arch path {
+stroke: #fff;
+
+}
 
 @import 'timeline';
